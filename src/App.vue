@@ -1,6 +1,7 @@
 <template>
  <div class="container">
-  <Passmessage msg="Pass message"/>
+  <Passmessage @submit="onSubmit" msg="Pass message"/>
+  <div class="textes">{{ outputFrom }}</div>
  </div>
 </template>
 
@@ -11,6 +12,18 @@ export default {
   name: 'App',
   components: {
     Passmessage
+  },
+
+  data(){
+    return{
+      outputFrom:'',
+    }
+  },
+
+  methods:{
+    onSubmit(messageValue){
+      this.outputFrom = messageValue
+    }
   }
 }
 </script>
